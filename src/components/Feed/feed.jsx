@@ -7,6 +7,7 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import CalendarViewDayIcon from "@mui/icons-material/CalendarViewDay";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import "./feed.css";
+import Post from "../Post/post";
 const Feed = () => {
     return ( <
         div className = "feed" >
@@ -17,7 +18,7 @@ const Feed = () => {
         <
         Avatar className = "feed_inputContainer_avatar"
         src = { avatar }
-        /> <
+        />{" "} <
         div className = "feed_input" >
         <
         form >
@@ -25,10 +26,10 @@ const Feed = () => {
         input type = "text"
         placeholder = "Start a post" / >
         <
-        button type = "submit" > Send < /button> <
-        /form> <
-        /div> <
-        /div> <
+        button type = "submit" > Send < /button>{" "} <
+        /form>{" "} <
+        /div>{" "} <
+        /div>{" "} <
         div className = "feed_inputOptions" >
         <
         InputOption Icon = { ImageIcon }
@@ -48,8 +49,13 @@ const Feed = () => {
         color = "#7FC15E" /
         >
         <
+        /div>{" "} <
         /div> <
-        /div> <
+        Post name = "Amitav Panda"
+        description = "This is description"
+        message = "this is message this is message this is message this is message this is messagethis is message this is message this is messagethis is message this is messagethis is this is message is messagethis is messagethis is message is messagethis is messagethis is message" /
+        >
+        <
         /div>
     );
 };

@@ -7,8 +7,7 @@ import Feed from "./components/Feed/feed";
 
 function App() {
     return ( <
-        div className = "app" > { /* Header  */ } <
-        Header / >
+        div className = "app" > { " " } { /* Header  */ } < Header / >
         <
         div className = "app_body" >
         <
@@ -16,7 +15,7 @@ function App() {
         <
         Feed / >
         <
-        /div> { /* AppBar  */ } { /* SideBar  */ } { /* Feed  */ } { /* Widgets  */ } <
+        /div>{" "} { /* AppBar  */ } { /* SideBar  */ } { /* Feed  */ } { /* Widgets  */ } { " " } <
         /div>
     );
 }
