@@ -1,0 +1,12 @@
+.login_input {
+    display: flex;
+    flex-direction: column;
+    color: gray;
+    padding: 2px;
+    margin: 10px;
+    margin-bottom: 5px;
+}
+
+.login_input>input {
+    height: 1.5rem;
+}
