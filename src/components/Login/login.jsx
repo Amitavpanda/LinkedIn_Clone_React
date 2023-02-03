@@ -1,9 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
 import LoginInput from "../LoginInput/loginInput";
+import { useDispatch } from "react-redux";
+import { auth } from "../../firebase";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { login } from "../../features/user/userSlice";
 const Login = () => {
-    const login_register = () => {};
-    const loginToApp = () => {};
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [profilePic, setProfilePic] = useState("");
+    const dispatch = useDispatch();
+
+    const login_register = async() => {
+        if (!name) {
+            return alert("Please enter your name");
+        }
+        try {
+            await createUserWithEmailAndPassword(auth, email, password).then(
+                async({ user }) => {
+                    await updateProfile(user, {
+                        displayName: name,
+                        photoURL: profilePic,
+                    }).then(async() => {
+                        await dispatch(
+                            login({
+                                email: user.email,
+                                uid: user.uid,
+                                displayName: name,
+                                photoURL: profilePic,
+                            })
+                        );
+                    });
+                }
+            );
+        } catch (error) {​
+            alert(error);
+        };
+    }
+
+
+
+    const loginToApp = async(e) => {
+        e.preventDefault();
+        try {
+            await signInWithEmailAndPassword(auth, email, password).
+            then(async({ user }) => {
+                await dispatch(login({
+                    email: user.email,
+                    uid: user.uid,
+                    displayName: user.displayName,
+                    profileUrl: user.photoURL,
+                }))
+            })
+        } catch (error) {
+            alert(error);
+        };
+
+    };
     return ( <
         div className = "loginPage" >
         <
@@ -15,13 +69,29 @@ const Login = () => {
         <
         form >
         <
-        LoginInput label = "Full name (if registering)" / >
+        LoginInput value = { name }
+        onChange = {
+            (e) => setName(e.target.value) }
+        label = "Full name (if registering)" /
+        >
         <
-        LoginInput label = "Email Address" / >
+        LoginInput value = { email }
+        onChange = {
+            (e) => setEmail(e.target.value) }
+        label = "Email Address" /
+        >
         <
-        LoginInput label = "Password" / >
+        LoginInput value = { password }
+        onChange = {
+            (e) => setPassword(e.target.value) }
+        label = "Password" /
+        >
         <
-        LoginInput label = "Profile pic(optional)" / >
+        LoginInput value = { profilePic }
+        onChange = {
+            (e) => setProfilePic(e.target.value) }
+        label = "Profile pic(optional)" /
+        >
         <
         div className = "agreement" >
         <

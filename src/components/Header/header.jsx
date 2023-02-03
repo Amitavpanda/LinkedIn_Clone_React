@@ -8,7 +8,16 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import ChatIcon from "@mui/icons-material/Chat";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import avatar from "../../static/amitav.jpeg";
+import { useDispatch } from "react-redux";
+import { logout } from "../../features/user/userSlice";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase";
 const Header = () => {
+    const dispatch = useDispatch();
+    const logoutOfApp = () => {
+        dispatch(logout());
+        signOut(auth);
+    };
     return ( <
         div className = "header" >
         <
@@ -39,7 +48,8 @@ const Header = () => {
         title = "Messaging" / > { " " } <
         HeaderOptions Icon = { NotificationsNoneIcon }
         title = "Notifications" / > { " " } <
-        HeaderOptions avatar = { avatar }
+        HeaderOptions onClick = { logoutOfApp }
+        avatar = { avatar }
         title = "Me" / > { " " } <
         /div>{" "} <
         /div>

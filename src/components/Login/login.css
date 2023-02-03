@@ -49,6 +49,11 @@
 .agreement_span {
     color: #0a66c2;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.agreement_span:hover {
+    text-decoration: underline;
 }
 
 .login_register {
@@ -64,6 +69,11 @@
     font-weight: bold;
     margin-left: 20px;
     margin-right: 20px;
+    cursor: pointer;
+}
+
+.login_register:hover {
+    background-color: #013a74;
 }
 
 .loginPage_signIn {
@@ -74,6 +84,11 @@
 .login_signin {
     color: #0a66c2;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.login_signin:hover {
+    text-decoration: underline;
 }
 
 .loginPage_business {
@@ -85,4 +100,9 @@
 .loginPage_business>p>span {
     color: #0a66c2;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.loginPage_business>p>span:hover {
+    text-decoration: underline;
 }
