@@ -21,3 +21,9 @@
     height: 25px !important;
     width: 25px !important;
 }
+
+@media only screen and (max-width: 767px) {
+    .headerOptions_title {
+        display: none;
+    }
+}

@@ -13,47 +13,33 @@ import { logout } from "../../features/user/userSlice";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
 const Header = () => {
-    const dispatch = useDispatch();
-    const logoutOfApp = () => {
-        dispatch(logout());
-        signOut(auth);
-    };
-    return ( <
-        div className = "header" >
-        <
-        div className = "header_left" >
-        <
-        img src = "https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
-        alt = "" /
-        >
-        <
-        div className = "header_search" >
-        <
-        SearchIcon / >
-        <
-        input type = "text" / >
-        <
-        /div>{" "} <
-        /div>{" "} <
-        div className = "header_right" >
-        <
-        HeaderOptions Icon = { HomeIcon }
-        title = "Home" / >
-        <
-        HeaderOptions Icon = { SupervisorAccountIcon }
-        title = "My Network" / > { " " } <
-        HeaderOptions Icon = { BusinessCenterIcon }
-        title = "Jobs" / > { " " } <
-        HeaderOptions Icon = { ChatIcon }
-        title = "Messaging" / > { " " } <
-        HeaderOptions Icon = { NotificationsNoneIcon }
-        title = "Notifications" / > { " " } <
-        HeaderOptions onClick = { logoutOfApp }
-        avatar = { avatar }
-        title = "Me" / > { " " } <
-        /div>{" "} <
-        /div>
-    );
+  const dispatch = useDispatch();
+  const logoutOfApp = () => {
+    dispatch(logout());
+    signOut(auth);
+  };
+  return (
+    <div className="header">
+      <div className="header_left">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
+          alt=""
+        />
+        <div className="header_search">
+          <SearchIcon />
+          <input placeholder="Search" type="text" />
+        </div>{" "}
+      </div>{" "}
+      <div className="header_right">
+        <HeaderOptions Icon={HomeIcon} title="Home" />
+        <HeaderOptions Icon={SupervisorAccountIcon} title="My Network" />{" "}
+        <HeaderOptions Icon={BusinessCenterIcon} title="Jobs" />{" "}
+        <HeaderOptions Icon={ChatIcon} title="Messaging" />{" "}
+        <HeaderOptions Icon={NotificationsNoneIcon} title="Notifications" />{" "}
+        <HeaderOptions onClick={logoutOfApp} avatar={avatar} title="Me" />{" "}
+      </div>{" "}
+    </div>
+  );
 };
 
 export default Header;

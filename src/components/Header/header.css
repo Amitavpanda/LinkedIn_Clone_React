@@ -39,3 +39,25 @@
     border: none;
     background: none;
 }
+
+
+@media only screen and (max-width: 767px) {
+    .header {
+        position: sticky;
+        background-color: white;
+        top: 0;
+        display: flex;
+        border-bottom: 0.1px solid lightgray;
+        padding-top: 10px;
+        width: 100%;
+        z-index: 999;
+    }
+
+    .header_search>input {
+        display: none;
+    }
+
+    .header_search {
+        background: none;
+    }
+}
