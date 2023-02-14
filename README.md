@@ -9,9 +9,9 @@ An LinkedIn Clone built using Material UI, React, Redux and firebase
 
 ## General info
 
-Implemented features such as user authentication,add linkedin post, and responsive UI.
-Utilized Firebase for data storage and authentication.
-One can refer this video to see the functionalities of this app.
+* Implemented features such as user authentication,add linkedin post, and responsive UI.
+* Utilized Firebase for data storage and authentication.
+* One can refer this video to see the functionalities of this app.
 
 
 https://user-images.githubusercontent.com/56599943/218645944-79967f02-781b-470d-8bae-2029f468c0f5.mp4
